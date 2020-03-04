@@ -10,7 +10,7 @@ const { Header, Content, Footer } = Layout;
 // const CustomLayout = (props) => {
 class CustomLayout extends React.Component {
   render() {
-    // console.log(this);
+    console.log(this);
     return(
       <Layout className="layout">
         <Header>
@@ -77,7 +77,7 @@ class CustomLayout extends React.Component {
           
             <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
               {
-                this.props.isAuthenticated ?
+                this.props.children ?
                 
                 this.props.children
                 :
