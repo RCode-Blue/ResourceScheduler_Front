@@ -17,9 +17,7 @@ const ProfileDetails = (props) => {
             </Descriptions.Item>
             <br/><br/>
 
-            <Descriptions.Item label="User Name">
-              {profile.user_name}
-            </Descriptions.Item>
+
 
             <Descriptions.Item label="Job Title">
               {profile.job_title}
