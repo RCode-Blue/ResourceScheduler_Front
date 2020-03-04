@@ -1,12 +1,12 @@
 import React from 'react';
-import { List, Icon } from 'antd';
+import { List } from 'antd';
 
-const IconText = ({ type, text }) => (
-  <span>
-    <Icon type={type} style={{ marginRight: 8 }} />
-    {text}
-  </span>
-);
+// const IconText = ({ type, text }) => (
+//   <span>
+//     <Icon type={type} style={{ marginRight: 8 }} />
+//     {text}
+//   </span>
+// );
 
 const Organisations = (props) => {
   // console.log(props);

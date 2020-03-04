@@ -17,7 +17,7 @@ class ProfileDetail extends React.Component {
 
 
   render() {
-    console.log(this);
+    // console.log(this);
     // console.log(this.props.orgUserDetails);
     // console.log(this.props.userid);
     // if(this.props.orgUserDetails){console.log(this.props.orgUserDetails[0])}
