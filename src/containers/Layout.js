@@ -11,6 +11,7 @@ const { Header, Content, Footer } = Layout;
 class CustomLayout extends React.Component {
   render() {
     console.log(this);
+    console.log(this.props.children);
     return(
       <Layout className="layout">
         <Header>
