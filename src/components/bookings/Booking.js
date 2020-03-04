@@ -34,7 +34,16 @@ const Bookings = (props) => {
         key={item.id}
         >
         <List.Item.Meta
-
+          avatar={
+            <Avatar 
+          shape="square" 
+          size="large" 
+          icon="paper-clip" 
+          style={{
+            // color: grey[1],
+            backgroundColor: blue[5]}}
+          />
+          }
           title={<a href={`/bookings/${item.id}/`}>{item.title}</a>}
           description={item.description}
         />

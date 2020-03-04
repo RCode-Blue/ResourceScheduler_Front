@@ -25,11 +25,11 @@ const Organisations = (props) => {
     renderItem={item => (
       <List.Item
         key={item.name}
-        actions={[
-          <IconText type="star-o" text="156" key="list-vertical-star-o" />,
-          <IconText type="like-o" text="156" key="list-vertical-like-o" />,
-          <IconText type="message" text="2" key="list-vertical-message" />,
-        ]}
+        // actions={[
+        //   <IconText type="star-o" text="156" key="list-vertical-star-o" />,
+        //   <IconText type="like-o" text="156" key="list-vertical-like-o" />,
+        //   <IconText type="message" text="2" key="list-vertical-message" />,
+        // ]}
         extra={
           <img
             width={272}
