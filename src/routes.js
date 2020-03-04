@@ -14,7 +14,7 @@ import ResourceDetail     from "./containers/resources/ResourceDetailView";
 import ProfileDetail      from "./containers/profiles/ProfileDetailView";
 import UserList           from "./containers/users/UserListView";
 import UserDetail         from "./containers/users/UserDetailView";
-import ScheduleList          from "./containers/schedules/ScheduleListView";
+import ScheduleList       from "./containers/schedules/ScheduleListView";
 
 
 import Login from "./containers/Login";

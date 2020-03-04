@@ -76,7 +76,13 @@ class CustomLayout extends React.Component {
           </Breadcrumb>
           
             <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
-              {this.props.children}
+              {
+                this.props.isAuthenticated ?
+                
+                this.props.children
+                :
+                <h2>Resource Scheduler</h2>
+              }
             </div>
         
           </Content>
