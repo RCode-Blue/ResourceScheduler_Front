@@ -2,7 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 
-import BookingList from "./containers/bookings/BookingListView";
+import Home               from "./containers/home";
+import BookingList        from "./containers/bookings/BookingListView";
 import BookingDetail      from "./containers/bookings/BookingDetailView";
 import MakeBooking        from "./containers/bookings/MakeBooking";
 import OrganisationList   from "./containers/organisations/OrganisationListView";
@@ -22,6 +23,7 @@ import Signup from "./containers/Signup";
 
 const BaseRouter = () => (
   <div>
+    <Route exact path="/" component={Home} />
     <Route exact path="/bookings/" component={BookingList} />
     <Route exact path="/bookings/:bookingID" component={BookingDetail} />
     <Route exact path="/makebooking/" component={MakeBooking} />
