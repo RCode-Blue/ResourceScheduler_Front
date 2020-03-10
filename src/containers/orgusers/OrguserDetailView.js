@@ -13,14 +13,8 @@ class OrguserDetail extends React.Component {
   }
 
   componentDidMount(){
-    // console.log(this);
-    
     const orguserID = this.props.match.params.orguserID;
     const orguserIdInt = parseInt(orguserID);
-    // console.log(this.props.match.params.orguserID);
-    // console.log(typeof(orguserID));
-    // console.log(typeof(orguserIdInt));
-
 
     this.props.getOrgUserDetails(orguserIdInt);
     // axios.get(`http://127.0.0.1:8000/api/orgusers/${orguserIdInt}/`)
@@ -35,7 +29,6 @@ class OrguserDetail extends React.Component {
   }
 
   render() {
-    // console.log(this);
     if(this.props.orgUserDetails === null){
       return(
         <div>
@@ -45,7 +38,6 @@ class OrguserDetail extends React.Component {
     }
     return(
       <OrgUserDetails data={this.props.orgUserDetails}/>
-      // <OrgUserDetails data={this.state.orguser}/>
     )
   }
 }

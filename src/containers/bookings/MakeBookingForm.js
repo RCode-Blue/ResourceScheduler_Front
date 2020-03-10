@@ -4,9 +4,7 @@ import { Skeleton, DatePicker, Button, Form, Input, Icon } from 'antd';
 import axios from 'axios';
 import * as actions from "../../store/actions";
 import moment from 'moment';
-// import {reformatBookings, anotherfunction} from "../../customScripts/bookings/bookings"
 import {reformatBookings} from "../../customScripts/bookings/bookings"
-// import { changeConfirmLocale } from 'antd/lib/modal/locale';
 
 const { RangePicker } = DatePicker;
 
@@ -28,9 +26,7 @@ class MakeBookingForm extends React.Component {
   
   componentDidUpdate(prevProps){
     if(this.props.filteredBookingList !== prevProps.filteredBookingList){
-      // console.log("WE Have Bookings!!!");
       let currentBookings = reformatBookings(this.props.filteredBookingList);
-      // console.log(currentBookings.fulldays);
       this.setState({
         fulldays: currentBookings.fulldays,
         partialdays: currentBookings.partialdays
@@ -39,15 +35,7 @@ class MakeBookingForm extends React.Component {
   }
 
   handleFormSubmit = (e) => {
-    e.preventDefault();
-    // console.log("Submitted");
-    // console.log(e.target.elements);
-    // console.log("----------");
-    // console.log(`title:         ${e.target.elements.title.value}`)
-    // console.log(`description:   ${e.target.elements.description.value}`)
-    // console.log(`resource:      ${this.props.resource.id}`)
-    // console.log(`booking_start: ${e.target.elements[2].value}`)
-    // console.log(`booking_end:   ${e.target.elements[3].value}`)
+    // e.preventDefault();
 
     const data = {
       "title": e.target.elements.title.value,
@@ -64,16 +52,6 @@ class MakeBookingForm extends React.Component {
   }
 
   onDateChange = (date, dateString) => {
-    // console.log(date[0], dateString[0]);
-    // console.log(date[1], dateString[1]);
-
-    // console.log(moment(date[0]).format("HH:mm"));
-
-
-    // let dayDataStart = JSON.parse(JSON.stringify(initialDayData));
-    // let dayDataEnd   = JSON.parse(JSON.stringify(initialDayData));
-
-    // const _dates = (date) => {
       const _dates = [...this.state.partialdays]
 
       const foundDate_start = _dates.find(
@@ -82,9 +60,7 @@ class MakeBookingForm extends React.Component {
         )
       )
       if(foundDate_start){
-        // console.log(foundDate_start);
         this.dayDataStart = JSON.parse(JSON.stringify(foundDate_start));
-        // console.log(this.dayDataStart)
       }
 
 
@@ -94,19 +70,13 @@ class MakeBookingForm extends React.Component {
         )
       )
       if(foundDate_end){
-        // console.log(foundDate_end);
         this.dayDataEnd = JSON.parse(JSON.stringify(foundDate_end));
-        // console.log(this.dayDataEnd)
       }
     // }
   }
 
 
   onOk = (val) => {
-    // console.log(val);
-    // console.log(val[0]);
-    // console.log(val[1]);
-
     this.setState({
       bookingTimes: val
     })
@@ -132,42 +102,9 @@ class MakeBookingForm extends React.Component {
     )
 
     if(foundDate){
-      // console.log(`Matched: ${foundDate}`)
       return true;
     }
     return false;
-    // #region
-    // const date1 = "2020-02-20";
-    // const date2 = "2020-02-24";
-    // const date3 = "2020-02-26";
-
-    // let momentVal = moment(current).format("YYYY-MM-DD")
-    // console.log(momentVal);
-    // console.log(typeof(momentVal));
-
-    // return current && current.valueOf() === moment("2020-02-18");
-    // if (moment(current).format("YYYY-MM-DD") == moment(date1)){
-    // if (moment(current).format("YYYY-MM-DD") == date1){
-    //   console.log(
-    //     `Match: ${date1} = ${moment(current).format("YYYY-MM-DD")}`);
-    //   return true;
-    // }
-
-    // if (moment(current).format("YYYY-MM-DD") == date2){
-    //   console.log(
-    //     `Match: ${date2} = ${moment(current).format("YYYY-MM-DD")}`);
-    //   return true;
-    // }
-
-    // if (moment(current).format("YYYY-MM-DD") == date3){
-    //   console.log(
-    //     `Match: ${date3} = ${moment(current).format("YYYY-MM-DD")}`);
-    //   return true;
-    // }
-    // else{
-    //   return false;
-    // }
-    // #endregion
   }
 
 
@@ -275,7 +212,6 @@ class MakeBookingForm extends React.Component {
               Create
             </Button>
           </Form.Item>
-
         </Form>
       </div>
     );

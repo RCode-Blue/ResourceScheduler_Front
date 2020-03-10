@@ -3,16 +3,7 @@ import { List, Avatar } from 'antd';
 import { blue } from '@ant-design/colors';
 import moment from 'moment';
 
-// const IconText = ({ type, text }) => (
-//   <span>
-//     <Icon type={type} style={{ marginRight: 8 }} />
-//     {text}
-//   </span>
-// );
-
-
 const Bookings = (props) => {
-  // console.log(props)
   return(
     <List
     itemLayout="vertical"

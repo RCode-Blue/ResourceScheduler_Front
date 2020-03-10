@@ -22,12 +22,10 @@ class ResourceList extends React.Component {
         this.setState({
           resources: res.data
         });
-        // console.log(res)
       })
   }
 
   render() {
-    // console.log(this);
     const { Panel } = Collapse;
     return(
       <div>

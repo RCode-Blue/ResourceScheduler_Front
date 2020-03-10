@@ -10,8 +10,6 @@ const { Header, Content, Footer } = Layout;
 // const CustomLayout = (props) => {
 class CustomLayout extends React.Component {
   render() {
-    // console.log(this);
-    // console.log(this.props.children);
     return(
       <Layout className="layout">
         <Header>
@@ -88,8 +86,6 @@ class CustomLayout extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
-  // console.log(state.token);
   return {
     isAuthenticated: state.token !== null,
     // userId: state.auth.userId

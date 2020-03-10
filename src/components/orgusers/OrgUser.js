@@ -40,16 +40,13 @@ const OrgUsers = (props) => {
               color: '#f56a00',
               backgroundColor: '#fde3cf'}}
             />}
-          // title={<a href={`/orgusers/${item.id}/`}>{item._user.first_name} {item._user.last_name}</a>}
           title= {item._user.first_name + " " + item._user.last_name}
-          
           description={item.organisation["name"]}
         />
         {item.content}
       </List.Item>
     )}
   />
-
   )
 }
 

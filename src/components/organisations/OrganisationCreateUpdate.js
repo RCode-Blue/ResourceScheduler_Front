@@ -8,8 +8,6 @@ class OrgCreateUpdateForm extends React.Component {
   handleFormSubmit = (e, type, organisationID) => {
     e.preventDefault();
 
-    // console.log(e.target.elements);
-
     const requestData = {
       "name": e.target.elements.orgName.value,
       "description": e.target.elements.orgDescription.value,
@@ -21,22 +19,14 @@ class OrgCreateUpdateForm extends React.Component {
       "country": e.target.elements.orgCountry.value
     }
 
-    // console.log(requestData);
-
-    // #region
-    // const orgName = e.target.elements.orgName.value;
-    // const orgDescription = e.target.elements.orgDesc.value;
-
     switch(type){
       case 'post':
-        // console.log("post");
       // return axios.post("http://127.0.0.1:8000/api/org/", requestData)
       return axios.post("/api/org/", requestData)
         .then(res => console.log(res))
         .catch(error => console.error(error));
 
       case 'put':
-        // console.log("put");
         // return axios.put(`http://127.0.0.1:8000/api/org/${organisationID}/`, requestData)
         return axios.put(`/api/org/${organisationID}/`, requestData)
           .then(res => console.log(res))
@@ -45,7 +35,6 @@ class OrgCreateUpdateForm extends React.Component {
       default:
         return null;
     }
-    // #endregion
   }
 
     renderPost = () => {
@@ -324,9 +313,6 @@ class OrgCreateUpdateForm extends React.Component {
   
 
   render() {
-    // console.log(this);
-    // const { getFieldDecorator } = this.props.form;
-
     if(this.props.requestType === "put"){
       return(
         <this.renderPut/>

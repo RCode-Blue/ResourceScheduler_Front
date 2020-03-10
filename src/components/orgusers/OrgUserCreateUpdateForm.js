@@ -8,18 +8,6 @@ const { Option } = Select;
 
 
 class OrgUserCreateUpdateForm extends React.Component {
-// #region
-// componentDidMount() {
-//   const request = {
-//     "org_ids":[2,4]
-//   }
-
-//   axios.get("http://127.0.0.1:8000/api/org/filtered/", {"org_ids":[2,4]})
-//   .then(res => console.log(res))
-//   .catch(error => console.error(error));
-// }
-// #endregion
-
   state = {
     local_UserList: [],
     localOrgUserList: [],
@@ -33,13 +21,6 @@ class OrgUserCreateUpdateForm extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    // console.log(e.target.elements);
-    // console.log(`_user:        ${this.state.selection_userId}`);
-    // console.log(`organisation: ${this.state.selection_orgId}`);
-    // console.log(`is_admin:     ${e.target.elements.is_admin.checked}`);
-    // console.log(`is_employee:  ${e.target.elements.is_employee.checked}`);
-    // console.log(`job_title:    ${e.target.elements.job_title.value}`);
-    // console.log(`department:   ${e.target.elements.department.value}`);
     const request = {
       "_user":this.state.selection_userId,
       "organisation":this.state.selection_orgId,
@@ -48,8 +29,6 @@ class OrgUserCreateUpdateForm extends React.Component {
       "job_title":e.target.elements.job_title.value,
       "department":e.target.elements.department.value
     }
-    // console.log(request);
-    // return axios.post("http://127.0.0.1:8000/api/orgusers/", request)
     return axios.post("/api/orgusers/", request)
     .then(res => console.log(res))
     .catch(err => console.error(err));
@@ -165,8 +144,6 @@ class OrgUserCreateUpdateForm extends React.Component {
   }
 
   handleOrgChange = (val) => {
-    // console.log(`organisation: ${val}`)
-
     // Make temp copy of local_UserList
     let temp_UserList = [...this.state.local_UserList];
 

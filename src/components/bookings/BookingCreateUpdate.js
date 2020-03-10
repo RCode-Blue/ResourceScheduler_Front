@@ -1,5 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 import { Form, Button, Input, DatePicker, Select } from 'antd';
 import axios from 'axios';
 import moment from 'moment';
@@ -7,8 +6,6 @@ import moment from 'moment';
 const { Option } = Select;
 
 class BookingCreateUpdateForm extends React.Component {
-  // console.log(this.props);
-  // const dateFormat = 'YYYY/MM/DD';
   state=({
     resources: [],
   })
@@ -27,17 +24,7 @@ class BookingCreateUpdateForm extends React.Component {
 
   handleFormSubmit = (e, type, bookingID) => {
     e.preventDefault();
-    // console.log(e.target.elements);
-    // console.log ("Type:        " + type);
-    // console.log ("bookingID:   " + bookingID);
-    // console.log ("Title:       " + e.target.elements.title.value);
-    // console.log ("Description: " + e.target.elements.description.value);
-    // console.log ("Resource:    " + this.props.booking.resource.id)
-    // console.log ("Start:       " + e.target.elements.startDateTime.value);
-    // console.log ("End:         " + e.target.elements.endDateTime.value);
 
-// #region
-    // switch(this.props.requestType){
     switch(type){
       case "post":
         // return axios.post("http://127.0.0.1:8000/api/bookings/")
@@ -57,21 +44,11 @@ class BookingCreateUpdateForm extends React.Component {
           "booking_start":e.target.elements.startDateTime.value,
           "booking_end":e.target.elements.endDateTime.value
         }
-        // console.log(request);
-        // console.log(`Booking id: ${bookingID}`);
         // return axios.put(`http://127.0.0.1:8000/api/bookings/${bookingID}/`,request);
         return axios.put(`/api/bookings/${bookingID}/`,request);
-        // console.log("edit");
-        // return this.setState({
-        //   resourceName:this.props.booking.resource_name
-        // })
-
       default:
         return null;
     }
-
-// #endregion
-
   }
 
 
@@ -83,7 +60,6 @@ class BookingCreateUpdateForm extends React.Component {
           <Select 
           style = {{width: 240}} 
           placeholder="Resource (post)"
-            // value={this.props.booking.resource_name}
           name="resource"  
           >
             {this.state.resources.map(resource => (
@@ -99,21 +75,18 @@ class BookingCreateUpdateForm extends React.Component {
       case "put":
         // edit
         return(
-          <Input  
-            // value={this.props.booking.resource_name}
+          <Input
             name="resource"  
             placeholder="Resource (put)"
             value={this.props.booking.resource_name}
           />
         )
-
       default:
         return null;
     }
   }
 
   render(){
-    // console.log(this);
     const titleDefaultValue=this.props.titleDefaultValue;
 
     return(

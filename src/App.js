@@ -11,7 +11,6 @@ import CustomLayout from "./containers/Layout";
 class App extends Component {
 
   componentDidMount() {
-    // console.log(this);
     this.props.onTryAutoSignup();
   }
 

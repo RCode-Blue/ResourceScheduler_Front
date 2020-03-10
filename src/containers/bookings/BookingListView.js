@@ -5,7 +5,6 @@ import { Select, Skeleton } from 'antd';
 import * as actions from "../../store/actions"
 
 import Bookings from "../../components/bookings/Booking";
-// import BookingCreateUpdateForm from "../../components/bookings/BookingCreateUpdate";
 
 const { Option } = Select;
 
@@ -31,7 +30,6 @@ class BookingList extends React.Component {
 
 
   render() {
-    // console.log(this);
     if(this.props.bookingList===null){
       return(
         <Skeleton/>
@@ -66,7 +64,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-
-// export default BookingList;
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookingList);

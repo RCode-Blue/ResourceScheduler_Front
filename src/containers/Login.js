@@ -9,15 +9,12 @@ const FormItem = Form.Item
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
 
-
-
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
 
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        // console.log('Received values of form: ', values);
         try {
           this.props.onAuth(values.username, values.password);
           // this.props.history.push("/");

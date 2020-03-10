@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import axios from 'axios';
 
 import { Card, Descriptions, Skeleton } from 'antd';
 
@@ -10,7 +9,6 @@ import UserUpdateForm from "../../components/users/UserCreateUpdateForm";
 class UserDetail extends React.Component {
   componentDidMount(){
     const userID = this.props.match.params.userID
-    // console.log(userID);
     this.props.getUserDetails(userID);
   }
 

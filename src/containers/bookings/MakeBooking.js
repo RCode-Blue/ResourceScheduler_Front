@@ -1,11 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Empty, Collapse } from 'antd';
-// import axios from 'axios';
 
 import * as actions from "../../store/actions";
-// import BookingCreateUpdateForm from "../../components/bookings/BookingCreateUpdate";
-// import MakeBookingDetails from "./MakeBookingDetails_old";
 import MakeBookingForm from "./MakeBookingForm";
 
 
@@ -23,7 +20,6 @@ class MakeBooking extends React.Component {
       this.setState({
         userId: this.props.userId
       });
-      // this.props.getOrgUserDetails(this.props.userId);
     }
     if(this.props.orgUserDetails !== prevProps.orgUserDetails){
       this.setState({
@@ -34,7 +30,6 @@ class MakeBooking extends React.Component {
 
   componentDidMount(){
     if(this.props.userId){
-      // this.props.getFilteredBookings(this.props.userId)}
       this.props.getOrgUserDetails(this.props.userId)}
   }
 
@@ -86,8 +81,6 @@ class MakeBooking extends React.Component {
 
 
   render() {
-    // console.log(this);
-    // console.log(this.props.userId);
     if(!this.props.userId){
       return(
         <div>

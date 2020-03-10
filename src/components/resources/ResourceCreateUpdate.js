@@ -18,31 +18,16 @@ class ResourceCreateUpdateForm extends React.Component {
     this.setState({
       dropdownChoice: val
     })
-    // console.log(val);
   }
 
   handleFormSubmit = (e, type, resourceID) => {
     e.preventDefault();
-    // #region
-    // console.log(e.target.elements);
-    // console.log(this.state.dropdownChoice);
-
-    // const name = e.target.elements.name.value;
-    // const description = e.target.elements.description.value;
-    // const orgID = this.state.dropdownChoice;
-
-    // console.log("name: " + name);
-    // console.log("description: " + description);
-    // console.log("orgID: " + orgID);
-    // #endregion
 
     const requestData = {
       "name":e.target.elements.name.value,
       "description":e.target.elements.description.value,
       "organisation":this.state.dropdownChoice
     }
-
-    // console.log(requestData);
 
     switch(type){
       case 'post':
@@ -231,7 +216,6 @@ class ResourceCreateUpdateForm extends React.Component {
         <this.renderPost/>
       )
     }
-
     return(
       <Skeleton/>
     )

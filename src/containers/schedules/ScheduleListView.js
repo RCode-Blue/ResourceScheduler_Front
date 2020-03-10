@@ -5,22 +5,11 @@ import moment from 'moment';
 import { Skeleton } from 'antd';
 
 import * as actions from "../../store/actions";
-// import Schedules from "../../components/schedules/schedule";
 import Bookings from "../../components/bookings/Booking";
 
 class ScheduleList extends React.Component {
   state = {
     workingBookingList: []
-  }
-
-
-  onPanelChange = (value, mode) => {
-    // console.log(value);
-    // console.log(mode);
-  }
-
-  onSelect = (value) => {
-    // console.log(value);
   }
 
 
@@ -30,7 +19,6 @@ class ScheduleList extends React.Component {
       if(booking.organizer === id 
         &&
         moment(booking.booking_end).isAfter(moment())){
-        // console.log(booking);
         tempBookingList.push(booking);
       }
 
@@ -53,7 +41,6 @@ class ScheduleList extends React.Component {
     }
   }
   render() {
-    // console.log(this);
     if(!this.state.workingBookingList){
       return(
         <Skeleton />
@@ -61,7 +48,6 @@ class ScheduleList extends React.Component {
     }
     return(
       <div>
-        
         <Bookings data={this.state.workingBookingList}/>
       </div>
     )

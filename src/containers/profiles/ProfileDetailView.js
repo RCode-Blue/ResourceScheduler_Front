@@ -9,20 +9,11 @@ import ProfileDetails from "../../components/profiles/Profile";
 class ProfileDetail extends React.Component {
 
   componentDidMount(){
-    // const request = {
-    //   "userid": this.props.userid
-    // };
     this.props.getOrgUserDetails(this.props.userid);
   }
 
 
   render() {
-    // console.log(this);
-    // console.log(this.props.orgUserDetails);
-    // console.log(this.props.userid);
-    // if(this.props.orgUserDetails){console.log(this.props.orgUserDetails[0])}
-    // if(this.props.orgUserDetails){console.log(this.props.orgUserDetails[0]._user)}
-
     if(!this.props.token){
       return(
         <Empty/>
@@ -38,7 +29,6 @@ class ProfileDetail extends React.Component {
 
     return(
       <div>
-        
         <Card title={this.props.orgUserDetails[0]._user.first_name + " " + this.props.orgUserDetails[0]._user.last_name}>
           <Descriptions>
             <Descriptions.Item label="Preferred">
@@ -54,7 +44,6 @@ class ProfileDetail extends React.Component {
         </Card>
         <br/>
         <ProfileDetails data={this.props.orgUserDetails}/>
-        
       </div>
     )
 

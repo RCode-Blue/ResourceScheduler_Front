@@ -7,10 +7,6 @@ import { NavLink } from 'react-router-dom';
 // import * as actions from '../store/actions/authActions';
 import * as actions from '../store/actions';
 
-// import OrgDropdown from './OrgDropdown';
-// import OrgCreateUpdateForm from '../components/organisations/OrganisationCreateUpdate';
-
-// const { Option } = Select;
 
 class RegistrationForm extends React.Component {
   constructor(props){
@@ -23,11 +19,7 @@ class RegistrationForm extends React.Component {
   };}
 
 
-  
-
   handleSubmit = (e) => {
-    // console.log(this);
-    // console.log(e);
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
@@ -41,8 +33,6 @@ class RegistrationForm extends React.Component {
           values.last_name,
           values.preferred_name
           )
-        // console.log('Received values of form: ', values);
-        // console.log(this);
       }
       this.props.history.push("/org");
     });
@@ -70,28 +60,8 @@ class RegistrationForm extends React.Component {
     callback();
   };
   
-  // #region
-  // handleDropdownChange = (value) => {
-  //   console.log(value);
-  //   this.setState({
-  //     orgDropdownVal: value
-  //   })
-  // }
-  
-  // componentDidMount(){
-    // axios.get("http://127.0.0.1:8000/api/org/")
-    //   .then(res => {
-    //     console.log(res);
-    //     this.setState({
-    //       orgList: res.data
-    //     });
-    //   });
-  // }
-
-// #endregion
 
   render() {
-    console.log(this);
     const { getFieldDecorator } = this.props.form;
 
     return (
@@ -311,10 +281,6 @@ const mapDispatchToProps = dispatch => {
   return {
     onAuth: (username, email, password1, password2, jobtitle, department) => dispatch(
       actions.authSignup(username, email, password1, password2, jobtitle, department))
-    
-    // getOrgs: () => dispatch(
-    //   actions.getOrgs()
-    // )
   }
 }
 

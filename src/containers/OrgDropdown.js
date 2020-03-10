@@ -21,9 +21,7 @@ class OrgDropdown extends Component {
 
 
   render(){
-    // console.log(this)
     if(this.state.orgList === null){
-      // console.log("null");
       return(
         <div>Loading...</div>
       )
@@ -44,7 +42,6 @@ class OrgDropdown extends Component {
               style={{ padding: '4px 8px', cursor: 'pointer' }}
               onMouseDown={e => e.preventDefault()}
             >
-              
             </div>
           </div>
         )}>
@@ -57,11 +54,9 @@ class OrgDropdown extends Component {
             {org.name}
           </Select.Option>
         ))}
-
       </Select>
     )
   }
-
 }
 
 export default OrgDropdown;

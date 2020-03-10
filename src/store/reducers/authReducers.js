@@ -2,7 +2,6 @@
 import { updateObject } from "../utility";
 
 
-// const authStart = (state, action) => {
 export const authStart = (state, action) => {
   return updateObject(state, {
     error: null,
@@ -10,10 +9,7 @@ export const authStart = (state, action) => {
   });
 }
 
-
-// const authSuccess = (state, action) => {
 export const authSuccess = (state, action) => {
-  // console.log(action);
   return updateObject(state, {
     token: action.user.token,
     username: action.user.username,
@@ -26,7 +22,6 @@ export const authSuccess = (state, action) => {
 }
 
 
-// const authFail = (state, action) => {
 export const authFail = (state, action) => {
   return updateObject(state, {
     error: action.error,
@@ -35,7 +30,6 @@ export const authFail = (state, action) => {
 }
 
 
-// const authLogout = (state, action) => {
 export const authLogout = (state, action) => {
   return updateObject(state, {
     token: null,

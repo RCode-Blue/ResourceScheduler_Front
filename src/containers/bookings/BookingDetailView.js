@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import { Collapse, Button } from 'antd';
 import BookingDetails from "../../components/bookings/BookingDetail";
-// import BookingUpdateDeleteForm from "../../components/bookings/BookingUpdateDelete";
 import BookingCreateUpdateForm from "../../components/bookings/BookingCreateUpdate";
 
 class BookingDetailView extends React.Component {
@@ -27,8 +26,7 @@ class BookingDetailView extends React.Component {
 
 
   handleDelete = (e) => {
-    // e.preventDefault();
-    // console.log(this.props.match.params.bookingID);
+    e.preventDefault();
     const bookingID = this.props.match.params.bookingID
     axios.delete(`/api/bookings/${bookingID}/`);
     this.props.history.push("/");
@@ -41,7 +39,6 @@ class BookingDetailView extends React.Component {
 
 
   render() {
-    // console.log(this);
     return(
       <div>
         <BookingDetails data={this.state.booking}/>
@@ -58,9 +55,7 @@ class BookingDetailView extends React.Component {
             resourceName = {this.state.booking.resource_name}
             titleDefaultValue  = {this.state.booking.title}
             descriptionDefaultValue = {this.state.booking.description}
-            // startDefaultValue = {moment(this.state.booking.booking_start).format("YYYY-MM-DD")}
             startDefaultValue = {this.state.booking.booking_start}
-            // endDefaultValue = {moment(this.state.booking.booking_end).format("YYYY-MM-DD")}
             endDefaultValue = {this.state.booking.booking_end}
             />
           

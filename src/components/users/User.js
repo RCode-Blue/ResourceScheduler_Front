@@ -1,15 +1,8 @@
 import React from 'react';
 import { List, Avatar } from 'antd';
 
-// const IconText = ({ type, text }) => (
-//   <span>
-//     <Icon type={type} style={{ marginRight: 8 }} />
-//     {text}
-//   </span>
-// );
 
 const Users = (props) => {
-  // console.log(props);
   return(
     <List
     itemLayout="horizontal"

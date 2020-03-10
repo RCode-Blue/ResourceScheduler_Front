@@ -14,7 +14,6 @@ class OrganisationList extends React.Component {
   }
 
   render() {
-    // console.log(this);
     const { Panel } = Collapse;
     
     if(this.props.orgList === null){

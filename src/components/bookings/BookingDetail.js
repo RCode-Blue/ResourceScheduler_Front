@@ -3,16 +3,6 @@ import { Card } from 'antd';
 import moment from 'moment';
 
 const BookingDetails = (props) => {
-// console.log(props);
-
-// let start = moment(props.data.booking_start);
-// console.log(moment(props.data.booking_start).format("LLLL"));
-
-
-// const columns = [
-
-// ]
-
   return(
     <div>
       <Card title={props.data.title}>
@@ -33,11 +23,9 @@ const BookingDetails = (props) => {
           </tbody>
         </table>
 
-
       </Card>
     </div>
   )
-
 }
 
 export default BookingDetails;
